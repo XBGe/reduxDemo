@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import styled from 'styled-components';
+import TodoForm  from './components/TodoForm';
+import Header from "./components/Header";
+import TodoList from "./components/TodoList";
+import TotalCompleteItems from "./components/TotalCompleteItems";
+import ClearBtn from "./components/ClearBtn"
 
-function App() {
+const Container = styled.div`
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  max-width: 500px;
+  min-width: 250px;
+  background: #fff;
+  background-size: 25px 25px;
+  border-radius: 20px;
+  box-shadow: 4px 3px 7px 2px #00000040;
+  padding: 1rem;
+  box-sizing: border-box;
+`;
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container>
+      <Header />
+      <TodoForm />
+      <TodoList />
+      <ClearBtn />
+      <TotalCompleteItems />
+    </Container>
+      
+    
+  )
 }
 
-export default App;
+export default App
+
